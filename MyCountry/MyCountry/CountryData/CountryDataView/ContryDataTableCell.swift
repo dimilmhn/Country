@@ -6,6 +6,11 @@
 //  Copyright © 2018 Dimil T Mohan. All rights reserved.
 //
 
+/*
+ Having the UIKit reference
+ Interract with presenter for the data
+ No Model contact
+ */
 import Foundation
 import UIKit
 

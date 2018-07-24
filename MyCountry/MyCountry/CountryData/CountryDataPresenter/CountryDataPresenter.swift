@@ -6,6 +6,12 @@
 //  Copyright © 2018 Dimil T Mohan. All rights reserved.
 //
 
+/*
+ Having the Model reference
+ Interract with Model layer for the data
+ Handling the presenter logic
+ No UIKit Reference
+ */
 import Foundation
 protocol PresenterDelegate: class {
     func didFinishedTheFetch()
@@ -22,6 +28,7 @@ class CountryDataPresenter: NSObject {
         
     }
     
+    //Requesting data to Manager
     func fetchCountryData(){
         manager.requestContryData{data in
             
@@ -34,7 +41,8 @@ class CountryDataPresenter: NSObject {
             self.delegate?.didFinishedTheFetch()
         }
     }
-    
+
+    //Logic for mapping the UI
     func returnTheDataModelForIndex(index:Int) -> CountryDataContents?{
         if (self.cointryDetails) != nil{
             return self.cointryDetails?[index]

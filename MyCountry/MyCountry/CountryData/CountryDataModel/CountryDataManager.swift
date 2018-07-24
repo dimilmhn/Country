@@ -5,7 +5,10 @@
 //  Created by Dimil T Mohan on 7/24/18.
 //  Copyright © 2018 Dimil T Mohan. All rights reserved.
 //
-
+/*
+ Interract with core network layer for the data
+ Handling the Buiciness logic and generating the model 
+ */
 import Foundation
 class CountryDataManager: NSObject {
     
