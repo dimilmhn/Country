@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		0FD6E396A19679D8DF77DE63 /* Pods_MyCountry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165248AD943AA88CE1F1C074 /* Pods_MyCountry.framework */; };
 		3AF846EB754BD7089E18B5B1 /* Pods_MyCountryUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C6CD20916147D4F9525611 /* Pods_MyCountryUITests.framework */; };
+		51B42A0421079D640054D4DD /* ContryDataTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B42A0321079D640054D4DD /* ContryDataTableCell.swift */; };
+		51B42A0521079D640054D4DD /* ContryDataTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B42A0321079D640054D4DD /* ContryDataTableCell.swift */; };
 		51DCDD9E210778C00097D17B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDD9D210778C00097D17B /* AppDelegate.swift */; };
 		51DCDDA3210778C00097D17B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDDA1210778C00097D17B /* Main.storyboard */; };
 		51DCDDA6210778C00097D17B /* MyCountry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDDA4210778C00097D17B /* MyCountry.xcdatamodeld */; };
 		51DCDDA8210778C20097D17B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDDA7210778C20097D17B /* Assets.xcassets */; };
 		51DCDDAB210778C20097D17B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51DCDDA9210778C20097D17B /* LaunchScreen.storyboard */; };
-		51DCDDB6210778C20097D17B /* MyCountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDDB5210778C20097D17B /* MyCountryTests.swift */; };
+		51DCDDB6210778C20097D17B /* CountryDataPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDDB5210778C20097D17B /* CountryDataPresenterTests.swift */; };
 		51DCDDC1210778C30097D17B /* MyCountryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDDC0210778C30097D17B /* MyCountryUITests.swift */; };
 		51DCDDD3210779D90097D17B /* CountryDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDDD2210779D90097D17B /* CountryDataController.swift */; };
 		51DCDDD4210779D90097D17B /* CountryDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDDD2210779D90097D17B /* CountryDataController.swift */; };
@@ -26,6 +28,8 @@
 		51DCDDDF21077D970097D17B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDDDD21077D970097D17B /* Constants.swift */; };
 		51DCDDE121077DD50097D17B /* CoreNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDDE021077DD50097D17B /* CoreNetworkService.swift */; };
 		51DCDDE221077DD50097D17B /* CoreNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDDE021077DD50097D17B /* CoreNetworkService.swift */; };
+		51DCDDE4210798280097D17B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDDE3210798280097D17B /* Extensions.swift */; };
+		51DCDDE5210798280097D17B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DCDDE3210798280097D17B /* Extensions.swift */; };
 		F83540C020C7929E45CC282C /* Pods_MyCountryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 894577137DA77D81F8D32D24 /* Pods_MyCountryTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +53,7 @@
 /* Begin PBXFileReference section */
 		165248AD943AA88CE1F1C074 /* Pods_MyCountry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCountry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F2F45510C304978155F85D0 /* Pods-MyCountryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCountryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCountryTests/Pods-MyCountryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		51B42A0321079D640054D4DD /* ContryDataTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContryDataTableCell.swift; sourceTree = "<group>"; };
 		51DCDD9A210778C00097D17B /* MyCountry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCountry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DCDD9D210778C00097D17B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51DCDDA2210778C00097D17B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,7 +62,7 @@
 		51DCDDAA210778C20097D17B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51DCDDAC210778C20097D17B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51DCDDB1210778C20097D17B /* MyCountryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCountryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		51DCDDB5210778C20097D17B /* MyCountryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCountryTests.swift; sourceTree = "<group>"; };
+		51DCDDB5210778C20097D17B /* CountryDataPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataPresenterTests.swift; sourceTree = "<group>"; };
 		51DCDDB7210778C30097D17B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51DCDDBC210778C30097D17B /* MyCountryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCountryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DCDDC0210778C30097D17B /* MyCountryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCountryUITests.swift; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 		51DCDDD821077AFD0097D17B /* CountryDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDataManager.swift; sourceTree = "<group>"; };
 		51DCDDDD21077D970097D17B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51DCDDE021077DD50097D17B /* CoreNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreNetworkService.swift; sourceTree = "<group>"; };
+		51DCDDE3210798280097D17B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		56777B54791F5186A2DE487E /* Pods-MyCountry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCountry.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyCountry/Pods-MyCountry.release.xcconfig"; sourceTree = "<group>"; };
 		7658EEB5A12CDB65AF225FC6 /* Pods-MyCountryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyCountryUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyCountryUITests/Pods-MyCountryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		894577137DA77D81F8D32D24 /* Pods_MyCountryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyCountryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +151,7 @@
 		51DCDDB4210778C20097D17B /* MyCountryTests */ = {
 			isa = PBXGroup;
 			children = (
-				51DCDDB5210778C20097D17B /* MyCountryTests.swift */,
+				51DCDDB5210778C20097D17B /* CountryDataPresenterTests.swift */,
 				51DCDDB7210778C30097D17B /* Info.plist */,
 			);
 			path = MyCountryTests;
@@ -174,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				51DCDDD2210779D90097D17B /* CountryDataController.swift */,
+				51B42A0321079D640054D4DD /* ContryDataTableCell.swift */,
 			);
 			path = CountryDataView;
 			sourceTree = "<group>";
@@ -198,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				51DCDDDD21077D970097D17B /* Constants.swift */,
+				51DCDDE3210798280097D17B /* Extensions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -446,6 +454,8 @@
 				51DCDDA6210778C00097D17B /* MyCountry.xcdatamodeld in Sources */,
 				51DCDDD921077AFD0097D17B /* CountryDataManager.swift in Sources */,
 				51DCDDE121077DD50097D17B /* CoreNetworkService.swift in Sources */,
+				51B42A0421079D640054D4DD /* ContryDataTableCell.swift in Sources */,
+				51DCDDE4210798280097D17B /* Extensions.swift in Sources */,
 				51DCDDD3210779D90097D17B /* CountryDataController.swift in Sources */,
 				51DCDD9E210778C00097D17B /* AppDelegate.swift in Sources */,
 				51DCDDD621077AE80097D17B /* CountryDataPresenter.swift in Sources */,
@@ -460,9 +470,11 @@
 				51DCDDDF21077D970097D17B /* Constants.swift in Sources */,
 				51DCDDDA21077AFD0097D17B /* CountryDataManager.swift in Sources */,
 				51DCDDD4210779D90097D17B /* CountryDataController.swift in Sources */,
-				51DCDDB6210778C20097D17B /* MyCountryTests.swift in Sources */,
+				51DCDDB6210778C20097D17B /* CountryDataPresenterTests.swift in Sources */,
 				51DCDDD721077AE80097D17B /* CountryDataPresenter.swift in Sources */,
+				51B42A0521079D640054D4DD /* ContryDataTableCell.swift in Sources */,
 				51DCDDE221077DD50097D17B /* CoreNetworkService.swift in Sources */,
+				51DCDDE5210798280097D17B /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
