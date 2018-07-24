@@ -24,6 +24,7 @@ class CountryDataPresenter: NSObject {
     
     func fetchCountryData(){
         manager.requestContryData{data in
+            
             if let dataList = data?.dataList{
                 self.cointryDetails = dataList
             }
@@ -31,11 +32,13 @@ class CountryDataPresenter: NSObject {
                 self.viewTitle = viewTitle
             }
             self.delegate?.didFinishedTheFetch()
-            
         }
     }
     
     func returnTheDataModelForIndex(index:Int) -> CountryDataContents?{
-        return self.cointryDetails![index]
+        if (self.cointryDetails) != nil{
+            return self.cointryDetails?[index]
+        }
+        return nil
     }
 }
