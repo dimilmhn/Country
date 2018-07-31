@@ -119,6 +119,8 @@ extension CountryDataController:UITableViewDelegate{
 }
 // MARK: PresenterDelegate
 extension CountryDataController:PresenterDelegate{
+    
+    //handling response
     func didFinishedTheFetch() {
         
         DispatchQueue.main.async { [unowned self] in
@@ -129,6 +131,14 @@ extension CountryDataController:PresenterDelegate{
         }
         
     }
+    
+    //handling error
+    func didFinishedWithError(error:Any?){
+        if let error = error{
+            print(error)
+        }
+    }
+    
 }
 
 

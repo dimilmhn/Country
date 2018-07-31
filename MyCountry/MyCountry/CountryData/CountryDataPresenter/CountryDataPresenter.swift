@@ -15,6 +15,8 @@
 import Foundation
 protocol PresenterDelegate: class {
     func didFinishedTheFetch()
+    func didFinishedWithError(error:Any?)
+    
 }
 class CountryDataPresenter: NSObject {
     
@@ -30,8 +32,7 @@ class CountryDataPresenter: NSObject {
     
     //Requesting data to Manager
     func fetchCountryData(){
-        manager.requestContryData{data in
-            
+        manager.requestContryData(completion :{data in
             if let dataList = data?.dataList{
                 self.cointryDetails = dataList
             }
@@ -39,7 +40,9 @@ class CountryDataPresenter: NSObject {
                 self.viewTitle = viewTitle
             }
             self.delegate?.didFinishedTheFetch()
-        }
+        }, andError: {error in
+            self.delegate?.didFinishedWithError(error: error)
+        })
     }
 
     //Logic for mapping the UI

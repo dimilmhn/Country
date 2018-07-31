@@ -37,7 +37,6 @@ class ContryDataTableCell: UITableViewCell {
         hiddenView.widthAnchor.constraint(equalToConstant:128).isActive = true
         hiddenView.bottomAnchor.constraint(equalTo:self.contentView.bottomAnchor, constant:-14).isActive = true
         
-        
         title.topAnchor.constraint(equalTo:self.detailImage.topAnchor).isActive = true
         title.leadingAnchor.constraint(equalTo:detailImage.trailingAnchor, constant:24).isActive = true
         title.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-15).isActive = true

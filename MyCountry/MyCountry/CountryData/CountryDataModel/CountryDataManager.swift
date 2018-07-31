@@ -12,9 +12,9 @@
 import Foundation
 class CountryDataManager: NSObject {
     
-    func requestContryData(completion: @escaping (CountryDataModel?) -> Void){
+    func requestContryData(completion: @escaping (CountryDataModel?) -> Void,andError completionError: @escaping  (Any?) -> Void){
         print(APP_URLS.Country_Data_URL)
-        CoreNetworkService().requestGetData(url:APP_URLS.Country_Data_URL) {response in
+        CoreNetworkService().requestGetData(url:APP_URLS.Country_Data_URL, completion: {response in
             if (response != nil){
                 let responseStrInISOLatin = String(data: response! as! Data, encoding: String.Encoding.isoLatin1)
                 guard let modifiedDataInUTF8Format = responseStrInISOLatin?.data(using: String.Encoding.utf8) else {
@@ -23,7 +23,7 @@ class CountryDataManager: NSObject {
                 }
                 let json = try? JSONSerialization.jsonObject(with: modifiedDataInUTF8Format)
                 let dataDic = json as! Dictionary<String, Any>
-            
+                
                 if let countryData = dataDic["rows"]as? [Dictionary<String, Any>]{
                     var list = [CountryDataContents]()
                     // Accepts a dictionary
@@ -46,11 +46,14 @@ class CountryDataManager: NSObject {
                 completion(nil)
             }
             completion(nil)
-        }
+        }, andError: {error in
+            completionError(error)
+        })
+        
     }
-    
-    
+ 
 }
+
 
 struct CountryDataContents {
     var details:String?

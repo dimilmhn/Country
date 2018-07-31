@@ -15,7 +15,7 @@ class CoreNetworkService: NSObject {
     }
     var completion:((Any?) -> Void)? = nil
     
-    func requestGetData(url:String,completion: @escaping (Any?) -> Void) {
+    func requestGetData(url:String,completion: @escaping (Any?) -> Void, andError completionError: @escaping  (Any?) -> Void) {
         guard let url = URL(string:url) else {
             completion(nil)
             return
@@ -32,10 +32,10 @@ class CoreNetworkService: NSObject {
             
             guard error == nil else {
                 print("Error while fetching remote rooms:")
-                completion(nil)
+                completionError(error) //return error
                 return
             }
-            completion(data)
+            completion(data) //return the data
         }
         task.resume()
         
