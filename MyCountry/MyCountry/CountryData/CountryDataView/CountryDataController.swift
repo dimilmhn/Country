@@ -34,8 +34,13 @@ class CountryDataController: UIViewController {
         
         self.configureTheTable()
         presenter.delegate = self;
-        indicatorView = UIViewController.displaySpinner(onView: self.view)
-        presenter.fetchCountryData()
+        CoreNetworkService.isReachable {[unowned self] networkManagerInstance in
+            self.presenter.fetchCountryData()
+            self.indicatorView = UIViewController.displaySpinner(onView: self.view)
+        }
+        CoreNetworkService.isUnreachable {networkManagerInstance in
+            print("Network is Unavailable")
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,7 +68,7 @@ class CountryDataController: UIViewController {
         self.countryDataTable.estimatedRowHeight = 165.0
         self.countryDataTable.rowHeight = UITableViewAutomaticDimension
         self.countryDataTable.addSubview(self.refreshControl)
-        self.countryDataTable.isHidden = true
+        self.countryDataTable.isHidden = false
         
         self.countryDataTable.register(ContryDataTableCell.self, forCellReuseIdentifier: "ContryDetailListCellID")
         

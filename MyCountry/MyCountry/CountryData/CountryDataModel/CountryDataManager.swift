@@ -14,7 +14,7 @@ class CountryDataManager: NSObject {
     
     func requestContryData(completion: @escaping (CountryDataModel?) -> Void,andError completionError: @escaping  (Any?) -> Void){
         print(APP_URLS.Country_Data_URL)
-        CoreNetworkService().requestGetData(url:APP_URLS.Country_Data_URL, completion: {response in
+        CoreNetworkService.sharedInstance.requestGetData(url:APP_URLS.Country_Data_URL, completion: {response in
             if (response != nil){
                 let responseStrInISOLatin = String(data: response! as! Data, encoding: String.Encoding.isoLatin1)
                 guard let modifiedDataInUTF8Format = responseStrInISOLatin?.data(using: String.Encoding.utf8) else {
