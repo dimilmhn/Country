@@ -15,7 +15,7 @@ import UIKit
 import SDWebImage
 
 class CountryDataController: UIViewController {
-    @IBOutlet weak var countryDataTable: UITableView!
+    var countryDataTable: UITableView!
     var presenter = CountryDataPresenter()
     var indicatorView = UIView()
     lazy var refreshControl: UIRefreshControl = {
@@ -44,12 +44,32 @@ class CountryDataController: UIViewController {
     
     // MARK: General methods
     func configureTheTable(){
+        self.countryDataTable = UITableView()
+        view.addSubview(self.countryDataTable)
+        self.countryDataTable.delegate = self
+        self.countryDataTable.dataSource = self
+        
+        self.countryDataTable.translatesAutoresizingMaskIntoConstraints = false
+        self.countryDataTable.topAnchor.constraint(equalTo:view.topAnchor).isActive = true
+        self.countryDataTable.leftAnchor.constraint(equalTo:view.leftAnchor).isActive = true
+        self.countryDataTable.rightAnchor.constraint(equalTo:view.rightAnchor).isActive = true
+        self.countryDataTable.bottomAnchor.constraint(equalTo:view.bottomAnchor).isActive = true
+        
+        self.countryDataTable.topAnchor.constraint(equalTo:view.safeAreaLayoutGuide.topAnchor).isActive = true
+        self.countryDataTable.leadingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        self.countryDataTable.trailingAnchor.constraint(equalTo:view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        self.countryDataTable.bottomAnchor.constraint(equalTo:view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
         self.countryDataTable.estimatedRowHeight = 165.0
         self.countryDataTable.rowHeight = UITableViewAutomaticDimension
         self.countryDataTable.addSubview(self.refreshControl)
         self.countryDataTable.isHidden = true
-
+        
+        self.countryDataTable.register(ContryDataTableCell.self, forCellReuseIdentifier: "ContryDetailListCellID")
+        
+        
     }
+    
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         presenter.fetchCountryData()
         self.countryDataTable.reloadData()
@@ -68,7 +88,7 @@ extension CountryDataController:UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:ContryDataTableCell = tableView.dequeueReusableCell(withIdentifier: "ContryDetailListCellID", for: indexPath) as! ContryDataTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContryDetailListCellID", for: indexPath) as! ContryDataTableCell
         if let modelTitle = presenter.returnTheDataModelForIndex(index: indexPath.row)?.title {
             cell.title.text = modelTitle
         }
@@ -90,6 +110,11 @@ extension CountryDataController:UITableViewDataSource{
   
         return cell
     }
+    
+}
+// MARK: UITableViewDelegate
+
+extension CountryDataController:UITableViewDelegate{
     
 }
 // MARK: PresenterDelegate
